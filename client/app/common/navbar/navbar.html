@@ -1,8 +1,18 @@
-<nav class="navbar">
-  <div class="logo">
-    <h1><a ui-sref="home">{{ $ctrl.name }}</a></h1>
+<md-toolbar class="app-toolbar md-whiteframe-z2 fix-top" >
+  <div class="md-toolbar-tools" tabindex="0">
+
+    <md-button class="menu-icon nornal-btn" ng-click="vm.toggleSideNav()" aria-label="Toggle Menu">
+
+        <md-tooltip >
+          {{vm.menuTooltip}}
+        </md-tooltip>
+
+        <i class="material-icons" style="margin-top: 10px;">reorder</i>
+
+    </md-button>
+
+    <span>{{vm.titleNavbar}}</span>
+
   </div>
-  <div class="nav-links">
-    <span><a ui-sref="about">about</a></span>
-  </div>
-</nav>
+</md-toolbar>
+

@@ -4,9 +4,12 @@ import './navbar.scss';
 
 let navbarComponent = {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+    items: '='
+  },
   template,
-  controller
+  controller,
+  controllerAs: 'vm'
 };
 
 export default navbarComponent;
