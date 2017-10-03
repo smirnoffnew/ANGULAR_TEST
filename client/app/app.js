@@ -6,6 +6,7 @@ import uiRouter from 'angular-ui-router';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
+import YouTubeEmbed from 'ng-videosharing-embed';
 import 'normalize.css';
 
 angular.module('app', [
@@ -14,7 +15,8 @@ angular.module('app', [
     ngMessages,
     ngCookies,
     Common,
-    Components
+    Components,
+    YouTubeEmbed
   ])
   .config(($locationProvider) => {
     "ngInject";
@@ -22,4 +24,24 @@ angular.module('app', [
     // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
-  .component('app', AppComponent);
+  .component('app', AppComponent)
+
+
+.run(function($trace) {
+    "ngInject";
+    $trace.enable('TRANSITION');
+})
+.run(function($transitions) {
+    "ngInject";
+
+    $transitions.onStart({ }, function(trans) {
+        var AccessService = trans.injector().get('AuthenticationService');
+        console.log('before');
+    });
+
+    $transitions.onStart({ }, function(trans) {
+        var AccessService = trans.injector().get('AuthenticationService');
+        console.log('start');
+    });
+});
+

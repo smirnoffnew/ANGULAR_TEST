@@ -1,7 +1,16 @@
 @import "common/common";
+@import "~angular-material/angular-material";
 
-.app {
-  height: 100%;
-  background-color: $lightBgColor;
+.active {
+  color:red !important;
+}
+
+.string-center {
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 

@@ -1,9 +1,33 @@
-<navbar></navbar>
-<header>
-  <hero></hero>
-</header>
-<main>
-  <div>
-    <h1>Found in {{ $ctrl.name }}.html</h1>
-  </div>
-</main>
+<div ng-if="!$ctrl.isUserLogged "
+     class="dialog-demo-content"
+     layout="column"
+     layout-align="space-around center"
+     style="min-height: 90vh;">
+  <h1>{{$ctrl.title}}</h1>
+  <md-button ui-sref="sign-in"
+             ui-sref-active="active"
+             class="md-primary"
+             style="display: block" >Sign in
+  </md-button>
+
+<video-item></video-item>
+  <album></album>
+
+
+</div>
+
+<div ng-if="$ctrl.isUserLogged "
+     class="dialog-demo-content"
+     layout="column"
+     layout-align="center center"
+     style="min-height: 90vh;">
+  <h1>Uara content!!</h1>
+  <md-button ui-sref="sign-out"
+             ui-sref-active="active"
+             class="md-primary"
+             style="display: block" >Sign out
+  </md-button>
+</div>
+
+
+

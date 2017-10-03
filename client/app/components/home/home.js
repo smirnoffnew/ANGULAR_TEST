@@ -11,15 +11,18 @@ let homeModule = angular.module('home', [
 
   $urlRouterProvider.otherwise('/');
 
+
   $stateProvider
     .state('home', {
       url: '/',
-      component: 'home'
+      component: 'home',
+      data: {
+        'noLogin': true
+      }
     });
 })
 
 .component('home', homeComponent)
-  
 .name;
 
 export default homeModule;

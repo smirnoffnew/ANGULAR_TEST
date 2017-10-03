@@ -1,6 +1,10 @@
+'use strict';
+
 class HomeController {
-  constructor() {
-    this.name = 'home';
+  constructor(UserService) {
+    'ngInject';
+    this.title = 'Welcome to angular YouTube albums application';
+    this.isUserLogged = UserService.getUser();
   }
 }
 

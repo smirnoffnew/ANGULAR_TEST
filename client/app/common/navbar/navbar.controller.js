@@ -5,7 +5,7 @@ class NavbarController {
     'ngInject';
     this.name = 'navbar';
     this.menuTooltip = 'Меню  ';
-    this.titleNavbar = "Список задач";
+    this.titleNavbar = "You Tube Albums";
     this.toggleSideNav = SideNavFactory.sideNavToggler();
   }
 }
