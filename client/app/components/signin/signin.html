@@ -1,0 +1,31 @@
+<div layout="row" ng-cloak layout-align="center center">
+  <md-whiteframe class="md-whiteframe-24dp" flex="70"  style="margin-top: 35px;">
+    <md-content class="md-no-momentum"  >
+      <form ng-submit="vm.submitLoginForm()" role="form" name="loginForm">
+
+        <!--login-->
+        <md-input-container flex="80" flex-offset="10" md-no-float class="md-block">
+          <md-icon md-colors="{color: 'green-200'}">
+            <i class="material-icons">perm_identity</i>
+          </md-icon>
+          <input type="text" ng-model="vm.login" ng-required="true" style="font-size: 20px">
+        </md-input-container>
+
+        <!--password-->
+        <md-input-container flex="80" flex-offset="10" class="md-block">
+          <md-icon md-colors="{color: 'pink-200'}">
+            <i class="material-icons">lock</i>
+          </md-icon>
+          <input type="password" ng-model="vm.password"  ng-required="true" style="font-size: 20px" >
+        </md-input-container>
+
+        <!--submit-->
+        <md-input-container flex="80" flex-offset="10" layout="row" layout-align="center none">
+          <md-button type="submit" ng-disabled="loginForm.$invalid" class="md-raised md-primary">Submit</md-button>
+        </md-input-container>
+
+      </form>
+    </md-content>
+  </md-whiteframe>
+</div>
+
