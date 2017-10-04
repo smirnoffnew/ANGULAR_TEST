@@ -7,10 +7,14 @@ let SignOutModule = angular.module('signout', [
 ])
 .config( ($stateProvider) => {
   "ngInject";
+
   $stateProvider
       .state('sign-out', {
           url: '/sign-out',
-          component: 'signOutComponent'
+          component: 'signOutComponent',
+          data: {
+              'isOnlyForAuthUser': true
+          }
       });
 })
 .component('signOutComponent', signOutComponent)

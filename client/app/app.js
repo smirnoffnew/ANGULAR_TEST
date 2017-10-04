@@ -25,23 +25,14 @@ angular.module('app', [
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
   .component('app', AppComponent)
-
-
-.run(function($trace) {
-    "ngInject";
-    $trace.enable('TRANSITION');
-})
-.run(function($transitions) {
-    "ngInject";
-
-    $transitions.onStart({ }, function(trans) {
-        var AccessService = trans.injector().get('AuthenticationService');
-        console.log('before');
-    });
-
-    $transitions.onStart({ }, function(trans) {
-        var AccessService = trans.injector().get('AuthenticationService');
-        console.log('start');
-    });
-});
+  .run(function($transitions, $state, AuthenticationService, $rootScope) {
+        "ngInject";
+        $transitions.onStart({}, function(trans) {
+            if (trans.$to().data.isOnlyForAuthUser) {
+                if  ( AuthenticationService.isUserLogged() !== trans.$to().data.isOnlyForAuthUser )  {
+                    $state.go('sign-in');
+                }
+            }
+        });
+  });
 

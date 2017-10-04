@@ -12,7 +12,7 @@ let aboutModule = angular.module('aboutModule', [
             url: '/about',
             component: 'aboutComponent',
             data: {
-                'noLogin': true
+                'isOnlyForAuthUser': false
             }
     });
 })

@@ -10,7 +10,10 @@ let signInModule = angular.module('sign-in', [
   $stateProvider
       .state('sign-in', {
         url: '/sign-in',
-        component: 'signInComponent'
+        component: 'signInComponent',
+        data: {
+          'isOnlyForAuthUser': false
+        }
       });
 })
 .component('signInComponent', signInComponent)

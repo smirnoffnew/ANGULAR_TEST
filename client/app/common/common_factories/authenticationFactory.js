@@ -1,5 +1,5 @@
 "use strict";
-let AuthenticationService = (UserService) => {
+let AuthenticationService = (UserService, $rootScope) => {
     'ngInject';
 
     function check(username, password) {
@@ -13,6 +13,7 @@ let AuthenticationService = (UserService) => {
     function login (username, password, callback) {
         if ( check(username, password) ) {
             UserService.setUser(username);
+            $rootScope.$broadcast('login');
             callback('You is logged');
         } else {
             callback('Username or password is incorrect');
@@ -21,9 +22,14 @@ let AuthenticationService = (UserService) => {
 
     function logout() {
         UserService.clearUser();
+        $rootScope.$broadcast('login');
     };
 
-    return {login, logout};
+    function isUserLogged() {
+       return  UserService.getUser() ? true : false;
+    };
+
+    return {login, logout, isUserLogged};
 };
 
 export default AuthenticationService;

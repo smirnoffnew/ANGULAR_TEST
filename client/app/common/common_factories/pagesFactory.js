@@ -5,15 +5,14 @@ let PagesFactory = () => {
     function pagesAuthorized() {
         return [
             {link:'home', title:'home'},
-            {link:'sign-in', title:'sign in'},
-            {link:'about', title:'about'}
+            {link:'about', title:'about'},
+            {link:'sign-out', title:'sign out'}
         ];
     }
 
     function pagesUnauthorized() {
         return [
-            {link:'home', title:'home'},
-            {link:'sign-out', title:'sign out'},
+            {link:'sign-in', title:'sign in'},
             {link:'about', title:'about'}
         ];
     }

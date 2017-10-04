@@ -5,6 +5,7 @@ class HomeController {
     'ngInject';
     this.title = 'Welcome to angular YouTube albums application';
     this.isUserLogged = UserService.getUser();
+
   }
 }
 

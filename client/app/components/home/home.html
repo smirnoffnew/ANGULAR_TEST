@@ -1,33 +1,60 @@
-<div ng-if="!$ctrl.isUserLogged "
-     class="dialog-demo-content"
-     layout="column"
-     layout-align="space-around center"
-     style="min-height: 90vh;">
-  <h1>{{$ctrl.title}}</h1>
-  <md-button ui-sref="sign-in"
-             ui-sref-active="active"
-             class="md-primary"
-             style="display: block" >Sign in
-  </md-button>
+<div class="dialog-demo-content centered">
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Add New Album</span>
+            </md-card-title-text>
+        </md-card-title>
 
-<video-item></video-item>
-  <album></album>
+        <form ng-submit="vm.submitLoginForm()" role="form" name="loginForm">
+            <!--title-->
+            <md-input-container flex="80" flex-offset="10" md-no-float class="md-block">
+                <md-icon md-colors="{color: 'green-200'}">
+                    <i class="material-icons">shop</i>
+                </md-icon>
+                <input type="text" ng-model="vm.title" ng-required="true" style="font-size: 20px">
+            </md-input-container>
+            <!--img_path-->
+            <md-input-container flex="80" flex-offset="10" class="md-block">
+                <md-icon md-colors="{color: 'pink-200'}">
+                    <i class="material-icons">tab</i>
+                </md-icon>
+                <input type="password" ng-model="vm.imgPath" style="font-size: 20px" >
+            </md-input-container>
+            <!--submit-->
+            <md-input-container flex="80" flex-offset="10" layout="row" layout-align="center none">
+                <md-button type="submit" ng-disabled="loginForm.$invalid" class="md-raised md-primary">Submit</md-button>
+            </md-input-container>
+        </form>
+    </md-card>
+
+
+  <video-item></video-item>
+  <video-item></video-item>
+  <video-item></video-item>
+  <video-item></video-item>
+  <video-item></video-item>
+
+
 
 
 </div>
 
-<div ng-if="$ctrl.isUserLogged "
-     class="dialog-demo-content"
-     layout="column"
-     layout-align="center center"
-     style="min-height: 90vh;">
-  <h1>Uara content!!</h1>
-  <md-button ui-sref="sign-out"
-             ui-sref-active="active"
-             class="md-primary"
-             style="display: block" >Sign out
-  </md-button>
-</div>
+
+<!--<album></album>-->
+
+<!--<div ng-if="$ctrl.isUserLogged "-->
+     <!--class="dialog-demo-content"-->
+     <!--layout="column"-->
+     <!--layout-align="center center"-->
+     <!--style="min-height: 90vh;">-->
+  <!--<h1>Uara content!!</h1>-->
+  <!--<md-button ui-sref="sign-out"-->
+             <!--ui-sref-active="active"-->
+             <!--class="md-primary"-->
+             <!--style="display: block" >Sign out-->
+  <!--</md-button>-->
+<!--</div>-->
 
 
 

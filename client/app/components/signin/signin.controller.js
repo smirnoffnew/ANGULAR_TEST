@@ -19,13 +19,14 @@ class SigninController {
               '</md-dialog>',
               controller: function DialogController($scope, $mdDialog) {
                 $scope.closeDialog = function() {
+                  $state.go('home');
                   $mdDialog.hide();
                 }
               }
           });
+
         });
-        $state.go('home');
-        $rootScope.$broadcast('login');
+
     }
   }
 }
