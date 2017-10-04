@@ -4,7 +4,12 @@ import './videoItem.scss';
 
 let videoItemComponent = {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+    album: "=",
+    title: "=",
+    description: "=",
+    url: "="
+  },
   template,
   controller
 };

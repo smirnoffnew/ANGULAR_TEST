@@ -1,11 +1,20 @@
 'use strict';
 
 class HomeController {
-  constructor(UserService) {
+  constructor(UserService, AlbumFactory, $scope) {
     'ngInject';
-    this.title = 'Welcome to angular YouTube albums application';
-    this.isUserLogged = UserService.getUser();
 
+    this.isUserLogged = UserService.getUser();
+    this.albums = AlbumFactory.getAlbums();
+    let _this = this;
+    $scope.$on('albumsEdited', function(event, args) {
+        _this.albums = AlbumFactory.getAlbums();;
+    });
+
+    this.submitAlbumForm = () => {
+        AlbumFactory.setAlbum({title:this.title, image:this.image});
+        console.log(this.title, this.image);
+    }
   }
 }
 

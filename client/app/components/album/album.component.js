@@ -4,7 +4,12 @@ import './album.scss';
 
 let albumComponent = {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+    id: "=",
+    title: "=",
+    image: "="
+  },
+  controllerAs: 'vm',
   template,
   controller
 };

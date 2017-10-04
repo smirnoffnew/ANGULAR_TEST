@@ -4,12 +4,7 @@ import './home.scss';
 
 let homeComponent = {
   restrict: 'E',
-  bindings: {
-      album: "=",
-      title: "=",
-      description: "=",
-      url: "="
-  },
+  bindings: {},
   controllerAs: 'vm',
   template,
   controller

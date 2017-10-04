@@ -6,34 +6,37 @@
             </md-card-title-text>
         </md-card-title>
 
-        <form ng-submit="vm.submitLoginForm()" role="form" name="loginForm">
+        <form ng-submit="vm.submitAlbumForm()" role="form" name="submitAlbumForm">
             <!--title-->
             <md-input-container flex="80" flex-offset="10" md-no-float class="md-block">
                 <md-icon md-colors="{color: 'green-200'}">
                     <i class="material-icons">shop</i>
                 </md-icon>
-                <input type="text" ng-model="vm.title" ng-required="true" style="font-size: 20px">
+                <input type="text" ng-model="vm.title" ng-required="false" style="font-size: 20px">
             </md-input-container>
             <!--img_path-->
             <md-input-container flex="80" flex-offset="10" class="md-block">
                 <md-icon md-colors="{color: 'pink-200'}">
                     <i class="material-icons">tab</i>
                 </md-icon>
-                <input type="password" ng-model="vm.imgPath" style="font-size: 20px" >
+                <input type="text" ng-model="vm.image" style="font-size: 20px" >
             </md-input-container>
             <!--submit-->
             <md-input-container flex="80" flex-offset="10" layout="row" layout-align="center none">
-                <md-button type="submit" ng-disabled="loginForm.$invalid" class="md-raised md-primary">Submit</md-button>
+                <md-button type="submit" ng-disabled="submitAlbumForm.$invalid" class="md-raised md-primary">Submit</md-button>
             </md-input-container>
         </form>
     </md-card>
 
 
-  <video-item></video-item>
-  <video-item></video-item>
-  <video-item></video-item>
-  <video-item></video-item>
-  <video-item></video-item>
+    <album ng-repeat="album in vm.albums" title="album.title" image="album.image" id="album.id"></album>
+
+
+  <!--<video-item></video-item>-->
+  <!--<video-item></video-item>-->
+  <!--<video-item></video-item>-->
+  <!--<video-item></video-item>-->
+  <!--<video-item></video-item>-->
 
 
 

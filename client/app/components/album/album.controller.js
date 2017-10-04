@@ -1,6 +1,12 @@
+'use strict';
+
 class AlbumController {
-  constructor() {
+  constructor(AlbumFactory) {
+    'ngInject';
     this.name = 'album';
+    this.removeAlbum = (albumTitle) => {
+        AlbumFactory.removeAlbum(albumTitle);
+    }
   }
 }
 
