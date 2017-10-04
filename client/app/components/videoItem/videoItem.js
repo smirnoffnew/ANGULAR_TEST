@@ -5,9 +5,7 @@ import videoItemComponent from './videoItem.component';
 let videoItemModule = angular.module('videoItem', [
   uiRouter
 ])
-
 .component('videoItem', videoItemComponent)
-
 .name;
 
 export default videoItemModule;

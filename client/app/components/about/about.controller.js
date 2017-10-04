@@ -1,6 +1,8 @@
 class AboutController {
-  constructor() {
+  constructor($stateParams) {
+    'ngInject';
     this.title = 'About page';
+    console.log('$stateParams',$stateParams.id);
   }
 }
 

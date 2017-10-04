@@ -5,13 +5,16 @@ import './videoItem.scss';
 let videoItemComponent = {
   restrict: 'E',
   bindings: {
-    album: "=",
+    id: "=",
     title: "=",
     description: "=",
-    url: "="
+    url: "=",
+    albumId: "=",
+    album: "=",
   },
   template,
-  controller
+  controller,
+  controllerAs: 'vm'
 };
 
 export default videoItemComponent;

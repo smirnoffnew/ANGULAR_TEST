@@ -2,22 +2,22 @@
   <md-card>
     <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">Video Title</span>
-        <span class="md-subhead">Album Title</span>
+        <span class="md-headline">{{vm.title}}</span>
+        <span class="md-subhead">{{vm.album}}</span>
       </md-card-title-text>
     </md-card-title>
 
-    <embed-video data-ng-href="http://www.youtube.com/watch?v=LOKyEt36Kjc">
+    <embed-video data-ng-href="{{vm.url}}">
       <a href="http://www.youtube.com/watch?v=LOKyEt36Kjc">Watch</a>
     </embed-video>
 
     <md-card-content>
       <p>
-        some description
+        {{vm.description}}
       </p>
     </md-card-content>
     <md-card-actions layout="row" layout-align="center center">
-      <md-button>Delete this video from album</md-button>
+      <md-button>Delete this video from {{vm.album}}</md-button>
     </md-card-actions>
   </md-card>
 </div>

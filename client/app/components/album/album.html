@@ -2,12 +2,12 @@
   <md-card>
     <md-card-title>
       <md-card-title-text>
+        <md-button ui-sref="album({id: vm.id})" >
         <span class="md-headline">{{vm.title}}</span>
+        </md-button>
       </md-card-title-text>
     </md-card-title>
-
-    <img class="album-img" src="{{vm.image}}">
-
+      <img class="album-img" src="{{vm.image}}">
     <md-card-actions layout="row" layout-align="center center">
       <md-button class="md-raised" ng-click="vm.removeAlbum(vm.id)">Delete this Album</md-button>
     </md-card-actions>
