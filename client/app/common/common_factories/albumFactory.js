@@ -6,6 +6,7 @@ let AlbumFactory = ($rootScope) => {
         {
             id: "1",
             title: "First Album",
+            description: "some simple album description",
             image: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Record-Album-02.jpg",
             videos:[
                 {
@@ -34,6 +35,7 @@ let AlbumFactory = ($rootScope) => {
         {
             id: "2",
             title: "Second Album",
+            description: "some simple album description",
             image: "http://www.billboard.com/files/styles/900_wide/public/media/Joy-Division-Unknown-Pleasures-album-covers-billboard-1000x1000.jpg",
             videos:[
                 {
@@ -62,6 +64,7 @@ let AlbumFactory = ($rootScope) => {
         {
             id: "3",
             title: "Third Album",
+            description: "some simple album description",
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFJQVU2F8MAF-GPpJHomuk6_ETa8D1CHiL05IzZzENr-8C9YUa",
             videos:[
                 {
@@ -84,6 +87,7 @@ let AlbumFactory = ($rootScope) => {
 
     let defaultImage = 'https://xage.ru/media/posts/2014/11/10/album-covers-2014.jpg';
     let defaultTitle = 'Album title';
+    let defaultDescription = 'some short video description';
 
     let getAlbums = () => {
         return albums;
@@ -110,8 +114,33 @@ let AlbumFactory = ($rootScope) => {
         });
     };
 
+    let removeVideo = (albumId, id) => {
+        for (var i in albums) {
+            if (albums[i].id == albumId) {
+                albums[i].videos = albums[i].videos.filter( (currentItem) => {
+                    return id !== currentItem.id;
+                });
+                $rootScope.$broadcast('albumsEdited');
+                break;
+            }
+        }
+    };
 
-    return { getAlbums, setAlbum, removeAlbum, getAlbum };
+    let setVideo = ( videoObject ) => {
+        videoObject.title = videoObject.title ? videoObject.title : defaultTitle;
+        videoObject.description = videoObject.description ? videoObject.description : defaultDescription;
+        for (var i in albums) {
+            if (albums[i].id == videoObject.albumId) {
+                videoObject.id = albums[i].videos.length;
+                albums[i].videos.unshift(videoObject);
+                $rootScope.$broadcast('albumsEdited');
+                break;
+            }
+        }
+    };
+
+
+    return { getAlbums, setAlbum, removeAlbum, getAlbum, removeVideo, setVideo };
 };
 
 export default AlbumFactory;

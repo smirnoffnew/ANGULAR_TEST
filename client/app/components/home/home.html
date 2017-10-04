@@ -28,32 +28,13 @@
         </form>
     </md-card>
 
-
-    <album ng-repeat="album in vm.albums" title="album.title" image="album.image" id="album.id"></album>
-
-
-
-
-
-
-
+    <album ng-repeat="album in vm.albums"
+           title="album.title"
+           description="album.description"
+           image="album.image"
+           id="album.id">
+    </album>
 </div>
-
-
-<!--<album></album>-->
-
-<!--<div ng-if="$ctrl.isUserLogged "-->
-     <!--class="dialog-demo-content"-->
-     <!--layout="column"-->
-     <!--layout-align="center center"-->
-     <!--style="min-height: 90vh;">-->
-  <!--<h1>Uara content!!</h1>-->
-  <!--<md-button ui-sref="sign-out"-->
-             <!--ui-sref-active="active"-->
-             <!--class="md-primary"-->
-             <!--style="display: block" >Sign out-->
-  <!--</md-button>-->
-<!--</div>-->
 
 
 

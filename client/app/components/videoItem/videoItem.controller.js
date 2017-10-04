@@ -1,6 +1,10 @@
 class VideoItemController {
-  constructor() {
+  constructor(AlbumFactory) {
+    'ngInject';
     this.name = 'videoItem';
+    this.removeVideo = (albumId, id) => {
+        AlbumFactory.removeVideo(albumId, id);
+    }
   }
 }
 

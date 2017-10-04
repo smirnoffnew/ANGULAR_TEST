@@ -13,7 +13,6 @@ class HomeController {
 
     this.submitAlbumForm = () => {
         AlbumFactory.setAlbum({title:this.title, image:this.image});
-        console.log(this.title, this.image);
     }
   }
 }

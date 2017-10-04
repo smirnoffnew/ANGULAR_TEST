@@ -7,6 +7,7 @@ let albumComponent = {
   bindings: {
     id: "=",
     title: "=",
+    description: "=",
     image: "="
   },
   controllerAs: 'vm',

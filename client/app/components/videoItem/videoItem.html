@@ -12,12 +12,11 @@
     </embed-video>
 
     <md-card-content>
-      <p>
-        {{vm.description}}
-      </p>
+      <p>{{vm.description}} ddddddddddd {{vm.albumId}}</p>
     </md-card-content>
+
     <md-card-actions layout="row" layout-align="center center">
-      <md-button>Delete this video from {{vm.album}}</md-button>
+      <md-button ng-click="vm.removeVideo(vm.albumId, vm.id)">Delete this video from {{vm.album}}</md-button>
     </md-card-actions>
   </md-card>
 </div>
