@@ -97,6 +97,7 @@ let AlbumFactory = ($rootScope) => {
         item.image = item.image ? item.image : defaultImage;
         item.title = item.title ? item.title : defaultTitle;
         item.id = albums.length;
+        item.videos = [];
         albums.unshift(item);
         $rootScope.$broadcast('albumsEdited');
     };

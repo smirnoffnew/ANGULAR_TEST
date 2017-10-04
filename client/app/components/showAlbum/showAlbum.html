@@ -2,7 +2,7 @@
   <md-card>
     <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">Add New Video To THis Album</span>
+        <span class="md-headline">Add New Video To This Album</span>
       </md-card-title-text>
     </md-card-title>
 
@@ -42,12 +42,10 @@
     <md-button style="display: block"
                class="md-accent"
                ui-sref='home'
-               ui-sref-active="active">
-      go back
-      <i class="material-icons">replay</i>
+               ui-sref-active="active">go back to {{vm.currentAlbum.title}}<i class="material-icons">replay</i>
     </md-button>
   </md-card>
-  <h1>{{vm.currentAlbum.id}}</h1>
+
   <video-item ng-repeat="video in vm.currentAlbum.videos"
        id="video.id"
        title="video.title"
