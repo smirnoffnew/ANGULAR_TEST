@@ -14,7 +14,7 @@ let AuthenticationService = (UserService, $rootScope) => {
         if ( check(username, password) ) {
             UserService.setUser(username);
             $rootScope.$broadcast('login');
-            callback('You is logged');
+            callback('You аре successfully logged in');
         } else {
             callback('Username or password is incorrect');
         }

@@ -1,0 +1,59 @@
+<div class="centered parent-container">
+  <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Add New Video To THis Album</span>
+      </md-card-title-text>
+    </md-card-title>
+
+    <form ng-submit="vm.submitVideoForm()" role="form" name="submitVideoForm">
+
+      <!--title-->
+      <md-input-container flex="80" flex-offset="10" md-no-float class="md-block">
+        <md-icon md-colors="{color: 'green-200'}">
+          <i class="material-icons">language</i>
+        </md-icon>
+        <input type="text" ng-model="vm.title" ng-required="false" style="font-size: 20px">
+      </md-input-container>
+
+      <!--description-->
+      <md-input-container flex="80" flex-offset="10" md-no-float class="md-block">
+        <md-icon md-colors="{color: 'green-200'}">
+          <i class="material-icons">receipt</i>
+        </md-icon>
+        <input type="text" ng-model="vm.description" ng-required="false" style="font-size: 20px">
+      </md-input-container>
+
+      <!--url-->
+      <md-input-container flex="80" flex-offset="10" class="md-block">
+        <md-icon md-colors="{color: 'pink-200'}">
+          <i class="material-icons">shop</i>
+        </md-icon>
+        <input type="text" ng-model="vm.url" ng-required="true"  style="font-size: 20px" >
+      </md-input-container>
+      <!--submit-->
+      <md-input-container flex="80" flex-offset="10" layout="row" layout-align="center none">
+        <md-button type="submit" ng-disabled="submitVideoForm.$invalid" class="md-raised md-primary">Submit</md-button>
+      </md-input-container>
+    </form>
+  </md-card>
+
+  <md-card>
+    <md-button style="display: block"
+               class="md-accent"
+               ui-sref='home'
+               ui-sref-active="active">
+      go back
+      <i class="material-icons">replay</i>
+    </md-button>
+  </md-card>
+  <h1>{{vm.currentAlbum.id}}</h1>
+  <video-item ng-repeat="video in vm.currentAlbum.videos"
+       id="video.id"
+       title="video.title"
+       description="video.description"
+       url="video.url"
+       album-id="vm.currentAlbum.id"
+       album="vm.currentAlbum.title">
+  </video-item>
+</div>

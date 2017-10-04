@@ -13,7 +13,7 @@ let homeModule = angular.module('home', [
       url: '/',
       component: 'home',
       data: {
-        'isOnlyForAuthUser': false
+        'isOnlyForAuthUser': true
       }
     });
 })

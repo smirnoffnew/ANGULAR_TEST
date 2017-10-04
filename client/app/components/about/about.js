@@ -9,8 +9,8 @@ let aboutModule = angular.module('aboutModule', [
     "ngInject";
     $stateProvider
         .state('about', {
-            url: '/about/:id',
-            component: 'showAlbumComponent',
+            url: '/about',
+            component: 'aboutComponent',
             data: {
                 'isOnlyForAuthUser': false
             }
